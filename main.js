@@ -1,5 +1,6 @@
 
 const startSortButtonElem = document.getElementById('startSortButton');
+const studentInputElem = document.getElementById('studentInput');
 
 
     const printToDom = (stringToPrint, divId) => {
@@ -7,8 +8,10 @@ const startSortButtonElem = document.getElementById('startSortButton');
         selectedDiv.innerHTML = stringToPrint;
         }
 
+// Function For Printing Student Form On Screen //
+
 const newStudentBuilder = () => {
-    let domString = `<form class="form-inline">
+    let newString = `<form class="form-inline">
         <div class="form-group mb-2">
       <label for="staticEmail2" class="sr-only">Email</label>
       <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
@@ -17,17 +20,53 @@ const newStudentBuilder = () => {
       <label for="inputPassword2" class="sr-only">Password</label>
       <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
     </div>
-    <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+    <button type="submit" id ="sortButton" class="btn btn-primary mb-2">SORT</button>
   </form>
   </div>`;
 
-    printToDom(domString, 'students');
+    printToDom(newString, 'students');
 }
+
+// Event Listener for Form Introduction //
+
 startSortButtonElem.addEventListener("click",(e) =>{
+
     e.preventDefault();
     newStudentBuilder();
 });
 
 
 
-var houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
+const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
+
+const printStudentCard = (name, houses) => { 
+
+    name = studentInput.value;
+    for (let i = 0; i < name.length; i++) {
+        console.log(name)
+    let newString = ''   
+        newString += `<div class="card w-15 m-4">
+        <div class="sortedStudent">
+        <h5 class="card-title">${name}</h5>
+        <h5 class="card-title">${houses[Math.random() * houses.length ]}</h5>
+        </div>`;
+    printToDom(newString, 'sortedStudent');
+    }
+   
+}
+// Event listener for Word Input button //
+
+// startCodeButtonElem.addEventListener("click",(e) => {
+//     e.preventDefault();
+//     printSecretString();
+// });
+
+
+
+
+
+// studentInputElem.addEventListener("click", (e) => {
+//     e.preventDefault();
+
+//     buildNewToDoCard(toDoInputElem.value, notesInputElem.value);
+// });
