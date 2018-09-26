@@ -38,8 +38,8 @@ const activateDeletes = () => {
         let finalCard = `<div class="card mb-2 ml-3 p-3 w-33 border border-white">
         <img class="card-img-top" src="./images/card.png" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">${inputValue}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${House}</h6>
+          <h3 class="card-title">${inputValue}</h3>
+          <h5 class="card-subtitle mb-2 text-muted">${House}</h5>
         </div>
         <button type="submit" id="expelStudentButton" class=" expelStudent btn btn-dark btn-sm mb-3  mt-1 p-3">Expel</button>
         </div> `
