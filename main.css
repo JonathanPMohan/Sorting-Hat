@@ -1,4 +1,8 @@
 body {
-    background-color: lightcoral;
-    color: black;
+    background-color: black;
+    color: gold; 
+    text-shadow: 2em;
+    background-image: url("./images/background.png");
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
 }
